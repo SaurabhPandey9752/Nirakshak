@@ -142,7 +142,7 @@ nav li:first-child {
   right: 0;
   height: 100vh;
   width: 250px; /* Sidebar width */
-  background-color: rgb(210, 223, 210);
+  background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px); /* Blur effect */
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   list-style: none;
