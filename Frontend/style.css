@@ -134,7 +134,6 @@ nav a:hover {
 nav li:first-child {
   margin-right: auto; /* Push the first item to the left */
 }
-
 .sidebar {
   position: fixed;
   top: 0;
@@ -152,9 +151,11 @@ nav li:first-child {
   justify-content: flex-start; /* Align to the top */
   transition: right 0.3s; /* Smooth transition when sliding in/out */
 }
+
 .sidebar.show {
   right: 0; /* Sidebar is visible when 'show' class is added */
 }
+
 
 .sidebar li {
   width: 100%; /* Full width */
@@ -201,6 +202,7 @@ nav li:first-child {
   }
 
 }
+
 
 /* .header-menu {
   position: relative;
