@@ -54,15 +54,6 @@ function showPreviousSlide() {
 document.querySelector('.next-button').addEventListener('click', showNextSlide);
 document.querySelector('.prev-button').addEventListener('click', showPreviousSlide);
 
-function showSidebar(){
-  const sidebar = document.querySelector('.sidebar')
-  sidebar.style.display = 'flex'
-}
-function hideSidebar(){
-  const sidebar = document.querySelector('.sidebar')
-  sidebar.style.display = 'none'
-}document.addEventListener("DOMContentLoaded", function () {
-  const quicklinksContainer = document.querySelector('.homebtm_quicklinks'); // Select the scrollable container
 
   // Interval for automatic scrolling in milliseconds
   const scrollInterval = 3000;
@@ -82,7 +73,23 @@ function hideSidebar(){
       quicklinksContainer.scrollBy({ left: scrollDistance, behavior: 'smooth' });
     }
   }
-
+  function showSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.add('show'); // Add the 'show' class to display the sidebar
+  }
+  
+  function hideSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.remove('show'); // Remove the 'show' class to hide the sidebar
+  }
   // Set interval to auto-scroll every few seconds
-  setInterval(autoScroll, scrollInterval);
-});
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.querySelector('.menu-button'); // Hamburger menu
+    const sidebar = document.querySelector('.sidebar'); // Sidebar
+  
+    // Event listener for menu button click to toggle sidebar visibility
+    menuButton.addEventListener('click', function () {
+      sidebar.classList.toggle('show'); // Add/remove the 'show' class to toggle sidebar
+    });
+  });
+  
