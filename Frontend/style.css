@@ -139,17 +139,18 @@ nav li:first-child {
   position: fixed;
   top: 0;
   z-index: 1;
-  right: 0;
+  right: -250px; /* Initially hidden, sliding out to the right */
   height: 100vh;
   width: 250px; /* Sidebar width */
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px); /* Blur effect */
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   list-style: none;
-  display: none; /* Hidden by default */
+  display: flex; /* Flexbox for alignment */
   flex-direction: column; /* Vertical alignment */
   align-items: flex-start; /* Align to the left */
   justify-content: flex-start; /* Align to the top */
+  transition: right 0.3s; /* Smooth transition when sliding in/out */
 }
 .sidebar.show {
   right: 0; /* Sidebar is visible when 'show' class is added */
