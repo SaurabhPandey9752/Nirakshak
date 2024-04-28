@@ -134,12 +134,14 @@ nav a:hover {
 nav li:first-child {
   margin-right: auto; /* Push the first item to the left */
 }
+
+/* Sidebar Styles */
 .sidebar {
   position: fixed;
   top: 0;
-  z-index: 1;
   right: -250px; /* Initially hidden, sliding out to the right */
   height: 100vh;
+  z-index: 1;
   width: 250px; /* Sidebar width */
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px); /* Blur effect */
@@ -156,17 +158,12 @@ nav li:first-child {
   right: 0; /* Sidebar is visible when 'show' class is added */
 }
 
-
 .sidebar li {
   width: 100%; /* Full width */
 }
 
 .sidebar a {
   width: 100%; /* Full width */
-}
-
-.menu-button {
-  display: none; /* Hidden by default */
 }
 
 /* Responsive Styles */
@@ -178,31 +175,19 @@ nav li:first-child {
   .menu-button {
     display: block; /* Show the hamburger menu button */
   }
-
-  .sidebar {
-    display: flex; /* Show sidebar */
-  }
 }
 
 @media (max-width: 400px) {
   .logo {
     width: 120%; /* Adjust width for smaller screens */
   }
-
-  .sidebar {
-    width: 100%; /* Sidebar takes full width on very small screens */
-  }
 }
-@media (max-width:320px){
+
+@media (max-width: 320px) {
   .logo {
-    width: 600px; /* Adjust width for smaller screens */
+    width: 600px; /* Wider adjustment for smaller screens */
   }
-  .sidebar {
-    width: 100%; /* Sidebar takes full width on very small screens */
-  }
-
 }
-
 /* .header-menu {
   position: relative;
   box-shadow: 0px 2px 5px 0px #00000036;
