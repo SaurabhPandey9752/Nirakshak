@@ -54,7 +54,7 @@ pip install flask sql easy-ocr streamlit ultralytics opencv-python tesseract
 flask run
 streamlit run <streamlit-app-file>
  Adjust the placeholders (`<repository-url>`, `<streamlit-app-file>`, etc.) as needed to fit your project specifics.
-
+```
 ## Contributing
 Contributions are welcome! If you'd like to contribute to the Nirakshak platform, please submit a pull request or open an issue on the repository.
 ## License
