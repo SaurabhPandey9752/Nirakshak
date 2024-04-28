@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="police1.css"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #f2f2f2;
+            /* margin: 0;
+             padding: 0;  */
+            /* position: relative;
+            min-height: 100vh; */
+            overflow-x: hidden; 
+        }
+
+        .slide {
+            height: 100%;
+            width:180px;
+            position: absolute;
+            background-color: #fff;
+            transition: 0.5s ease;
+            transform: translateX(100%);
+            top: 0;
+            right: 0;
+        }
+        h2{
+            margin-bottom: 20px;
+            text-decoration: underline;
+            display: inline-block;
+        }
+        p{
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: #8000ff;
+            font-weight: 800;
+            text-align: left;
+            margin-left: 15px;
+            padding: 10px 0;
+            padding-right: 30px;
+            pointer-events: none;   
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        ul li a {
+            color: #011a41;
+            font-weight: 500;
+            padding:5px 0;
+            display: block;
+            text-transform: capitalize;
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+
+        ul li:hover a {
+            color: #fff;
+            background-color: #8000ff;
+        }
+
+        ul li a i {
+            width: 40px;
+            text-align: center;
+        }
+
+        input {
+            display: none;
+            visibility: hidden;
+            /* -webkit-appearance: none; */
+        }
+        .logo{
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: 100%; 
+            font-weight: bold;
+            font-size: 25px;
+            padding: 15px 30px;
+            background-color: #e5e5e5;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            border-radius: 4    px;
+            height: 65px;
+         
+        }
+
+        .toggle {
+            margin-right: 15px;
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            top: 20px;
+            right: 15px;
+            z-index: 1;
+            cursor: pointer;
+            border-radius: 2px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .toggle .common {
+            position: absolute;
+            height: 2px;
+            width: 20px;
+            background-color:#8000ff;
+            border-radius: 50px;
+            transition: 0.3s ease;
+        }
+
+        .toggle .top_line {
+            top:30%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .toggle .middle_line {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .toggle .bottom_line {
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        input:checked ~ .toggle .top_line {
+            left: 2px;
+            top: 14px;
+            width: 25px;
+            transform: rotate(45deg);
+        }
+
+        input:checked ~ .toggle .bottom_line {
+            left: 2px;
+            top: 14px;
+            width:25px;
+            transform: rotate(-45deg);
+        }
+
+        input:checked ~ .toggle .middle_line {
+            opacity: 0;
+            transform: translate(20px);
+        }
+
+        input:checked ~ .slide {
+            transform: translateX(0);
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        /* Card Styles */
+        .cards {
+            z-index: -1;
+            position: absolute;
+            top: 15%;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: space-between;
+        }
+
+        .card {
+            margin: auto; /* Center the card horizontally */
+            width: calc(33.33% - 20px);
+            background-color: #fff;
+            height: auto;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+        video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .upload-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-button:hover {
+            background-color: #f2f2f2;
+        }
+
+        .upload-button i {
+            margin-right: 10px;
+        }
+          /* Dropdown */
+          .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+            margin-left: 25px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.65); /* Transparent black color */
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+
+        .footer-text {
+            font-size: 20px; /* Adjusted font size for better visibility */
+        }
+
+        .footer-iconTop {
+            position: absolute;
+            bottom: 10px;
+            right: 40px;
+        }
+
+        .footer-iconTop a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        
+       .pade{
+        font-size: 20px;
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="logo">Nirakshak</div>
+    <label>
+        <input type="checkbox">
+        <div class="toggle">
+            <span class="top_line common"></span>
+            <span class="middle_line common"></span>
+            <span class="bottom_line common"></span>
+        </div>
+
+        <div class="slide">
+            <h1>Menu</h1>
+            <ul>
+                <li><a href="#"><i class="fas fa-tv"></i>DashBoard</a></li>
+                <li><a href="#"><i class="fas fa-address-book"></i>Logs</a></li>
+                <li><a href="#"><i class="fas fa-cogs"></i>Setting</a></li>
+                <li><a href="#"><i class="fas fa-folder"></i>File</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+            </ul>
+        </div>
+    </label>
+
+    <!-- Cards Section -->
+    <h3>Models</h3>
+    <div class="cards">
+        <div class="card">
+            <div class="card-content">
+                <h2>Object Detection</h2>
+                <div class="dropdown">
+                    <button class="dropbtn">Select Object Type</button>
+                    <div class="dropdown-content">
+                        <a href="#">Person</a>
+                        <a href="#">Car</a>
+                        <a href="#">Bicycle</a>
+                        <!-- Add more options as needed -->
+                    </div>
+                </div>
+                <video autoplay loop src="TEAM ERROR 404 - Presentation.mp4"></video>
+                <div class="card-content upload-button" onclick="document.getElementById('upload-video').click()">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Upload a Video</span>
+                    <input type="file" id="upload-video" style="display:none" />
+                </div>
+                
+                <p>Implement object detection algorithms. <br>Timestamp: <span id="object-timestamp">00:00:00</span></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h2>Number Plate Detection</h2>
+                <video autoplay loop src="nightcheck.mp4"></video>
+                <div class="card-content upload-button" onclick="document.getElementById('upload-video').click()">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Upload a Video</span>
+                    <input type="file" id="upload-video" style="display:none" />
+                </div>
+                <p>Detect and recognize vehicle number plates.<br>Timestamp: <span id="object-timestamp">00:00:00</span></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h2>Violence Detection</h2>
+                <video autoplay loop src="crime.mp4"></video>
+                <div class="card-content upload-button" onclick="document.getElementById('upload-video').click()">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Upload a Video</span>
+                    <input type="file" id="upload-video" style="display:none" />
+                </div>
+                <p>Detect violent behavior in videos with time stamp.<br>Timestamp: <span id="object-timestamp">00:00:00</span></p>
+            </div>
+        </div>
+        <div class="card center">
+            <div class="card-content">
+                <h2>Live Camera Access</h2>
+                <div class="upload-button" onclick="document.getElementById('upload-video').click()">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Upload a Video</span>
+                    <input type="file" id="upload-video" style="display: none;" accept="video/*" capture="camera">
+                </div>
+                <p>Or</p>
+                <div class="upload-button">
+                    <i class="fas fa-video"></i>
+                    <span>Access Live Camera</span>
+                </div>
+                <!-- Add JavaScript to handle live camera access -->
+                <video id="live-camera" style="display: none;" autoplay></video>
+                <script>
+                      // JavaScript for handling object type selection and timestamp display
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to handle object type selection
+            function handleObjectTypeSelection(event) {
+                const objectType = event.target.textContent;
+                // Implement logic to handle selected object type
+                console.log("Selected Object Type:", objectType);
+            }
+
+            // Add event listeners for object type selection
+            const dropdownOptions = document.querySelectorAll(".dropdown-content a");
+            dropdownOptions.forEach(option => {
+                option.addEventListener("click", handleObjectTypeSelection);
+            });
+
+            // Function to update timestamp
+            function updateTimestamp() {
+                const timestampElement = document.getElementById("object-timestamp");
+                // Implement logic to update timestamp
+                timestampElement.textContent = getCurrentTimestamp(); // Example function to get current timestamp
+            }
+
+            // Example function to get current timestamp
+            function getCurrentTimestamp() {
+                // const now = new Date();
+                return `${padZero(now.getHours())}:${padZero(now.getMinutes())}:${padZero(now.getSeconds())}`;
+            }
+
+            // Function to pad zero for single digit numbers
+            function padZero(num) {
+                return (num < 10 ? '0' : '') + num;
+            }
+
+            // Update timestamp every second
+            setInterval(updateTimestamp, 1000);
+        });
+                    //for accessing live camera
+                    const accessLiveCamera = () => {
+                        const videoElement = document.getElementById('live-camera');
+                        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                            navigator.mediaDevices.getUserMedia({ video: true })
+                                .then(function (stream) {
+                                    videoElement.srcObject = stream;
+                                    videoElement.style.display = 'block';
+                                })
+                                .catch(function (error) {
+                                    console.error('Error accessing live camera:', error);
+                                });
+                        }
+                    };
+    
+                    // Call function to access live camera when the "Access Live Camera" button is clicked
+                    document.querySelector('.upload-button:last-of-type').addEventListener('click', accessLiveCamera);
+                </script>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-text">
+            <p class="pade">Copyright &copy; 2023 by Nirakshak | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

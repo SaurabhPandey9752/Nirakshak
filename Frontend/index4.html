@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirakshak</title>
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+    <style>
+        /* Basic CSS for the navbar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-image: url('bg.jpg');
+    /* background:linear-gradient(#084056,#0f9c76) ; 
+    ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    background-size: cover; */
+    background-color: #c8f4c9;
+        }
+
+        nav {
+            background-color: #958c8c;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 10px;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        .features{
+            padding: 50px 12%;
+            font-size: 22px;
+        }
+
+        .row{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 50px 0;
+        }
+
+        .text-col{
+            flex-basis: 50%;
+            margin-bottom: 20px;
+        }
+
+        .img-col{
+            flex-basis: 50%;
+            margin-bottom: 20px;
+        }
+
+        .img-col img{
+            display: block;
+            width: 90%;
+            margin: auto;
+        }
+
+        .features h2{
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 20px; 
+        }
+
+        .btn {
+            background-color: #7ccc7f;
+            border: none;
+            border-radius: 16px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background-color:black;
+        }
+    
+    footer{
+        background-color: #4b4848;
+        padding-top: 50px;
+    }
+    .container{
+        width: 1140px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .footer-content{
+        width: 33.3%;
+    }
+    h3{
+        font-size: 28px;
+        color: white;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .Tools{
+        text-decoration: underline;
+
+        text-align: center;
+        font-size: 25px;
+    }
+    .footer-content p{
+        width:190px;
+        margin: auto;
+        color: white;
+        padding: 7px;
+    }
+    .footer-content ul{
+        text-align: center;
+    }
+    .list{
+        padding: 0;
+    }
+    .list li{
+        width: auto;
+        text-align: center;
+        list-style-type:none;
+        padding: 7px;
+        position: relative;
+    }
+    .list li::before{
+        content: '';
+        position: absolute;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        top: 100%;
+        width: 0;
+        height: 2px;
+        background: #ede7e2;
+        transition-duration: .5s;
+    }
+    .list li:hover::before{
+        width: 70px;
+    }
+    .social-icons{
+        text-align: center;
+        padding: 0;
+    }
+    .social-icons li{
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+    }
+    .social-icons i{
+        color: white;
+        font-size: 25px;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    a:hover{
+        color: #f3efeb;
+    }
+    .social-icons i:hover{
+        color: #f6f1ec;
+    }
+    .bottom-bar{
+        background: #f9f5f1;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 50px;
+    }
+    .bottom-bar p{
+        color: #343434;
+        margin: 0;
+        font-size: 16px;
+        padding: 7px;
+    }   
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <h1>Nirakshak Authentication</h1>
+        <ul>
+            <li><a href="#detection">Detection</a></li>
+            <li><a href="#cameras">Cameras</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#help">Help</a></li>
+        </ul>
+    </nav>
+    <div class="Tools"><h2>Dekho Apna Desh </h2>
+    <p><i>MyGov <b>Prime</b></i></p></div>
+    <div class="features">
+        <div class="row">
+            <div class="text-col">
+                <h2>Detection</h2>
+                <p>Implement object detection algorithms to enhance your security measures.</p>
+                <a href="index3.html" class="btn">Go to Detection</a>
+            </div>
+            <div class="img-col">
+                <img src="detectionpng.png" >
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="img-col">
+                <img src="cameras.webp" >
+            </div>
+            <div class="text-col">
+                <h2>Cameras</h2>
+                <p>Explore our range of high-quality surveillance cameras for optimal security monitoring.</p>
+                <a href="security.html" class="btn">Go to Cameras</a>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="text-col">
+                <h2>Security</h2>
+                <p>Ensure the safety of your premises with our advanced security solutions and services.</p>
+                <a href="#security" class="btn">Go to Security</a>
+            </div>
+            <div class="img-col">
+                <img src="security.jpg" >
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="img-col">
+                <img src="feature-4.png" >
+            </div>
+            <div class="text-col">
+                <h2>Help</h2>
+                <p>Get assistance and support from our expert team to address any security concerns or queries.</p>
+                <a href="#help" class="btn">Go to Help</a>
+            </div>
+        </div> -->
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Contact Us</h3>
+                <p>Email:Info@example.com</p>
+                <p>Phone:+121 56556 565556</p>
+                <p>Address:Your Address 123 street</p>
+            </div>
+            <div class="footer-content">
+                <h3>Quick Links</h3>
+                 <ul class="list">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">Contact</a></li>
+                 </ul>
+            </div>
+            <div class="footer-content">
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                 <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                 <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                 <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                 <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+                </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2023 your company . All rights reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

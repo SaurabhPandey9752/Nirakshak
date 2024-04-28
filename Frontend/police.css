@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ 
+    font-family: "Poppins", sans-serif;
+}
+body {
+    width: 100%;
+    overflow-y: auto;  /* Enables vertical scrolling */
+    min-height: 100vh;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;  /* Column layout for vertical centering */
+    justify-content: flex-start;  /* Align with navbar at the top */
+    background: #e7eaea;
+}
+
+.container {
+    flex: 1;  /* Allow container to grow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  /* Vertical centering */
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 100px;
+    margin-top: 60px;  /* Leave space for navbar */
+}
+
+
+/* Reset */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 
+    
+    
+    ++0px 20px;
+    background-color: #e7eaea;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    margin: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    /* padding: 20px; */
+    height: 50px; /* Adjust logo size */
+    margin-right: 20px; /* Add space between logo and navbar links */
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px; /* Add padding for easier clicking */
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+   background-color: rgb(138, 43, 226); color: #dee4e9; /* Hover effect for links */
+}
+
+
+/* Main container */
+
+
+h3{
+    padding-top:60px;
+    text-align: center;
+}
+
+/* Title style */
+.title {
+    z-index: 1;
+    font-size: 32px; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Add space between title and logo */
+}
+
+/* Logo style */
+.logo {
+    max-width: 100px; /* Adjust max width as needed */
+    height: auto;
+    margin-bottom: 20px; /* Add space between logo and form */
+}
+
+
+.note {
+    margin-top: 20px;  /* Space above the note */
+    font-size: 14px;  /* Reasonable font size for readability */
+    color: #555;  /* Gray color for text */
+    text-align: center;  /* Center-align the text */
+    background: #f5f5f5;  /* Light background color for visibility */
+    padding: 10px;  /* Padding for space within the note */
+}
+
+
+::selection {
+    color: #fff;
+    background: #53f0e3;
+}
+.btn {
+    background-color: #161618;
+    border: none;
+    border-radius: 16px;
+    color: rgb(251, 249, 249);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color:rgb(0, 0, 0);
+}
+.footer {
+    background-color: #786f6f;
+    color: white;
+    text-align: center;
+    
+    padding: 0px;
+    position: fixed;
+    bottom: 0;  /* Footer sticks to the bottom */
+    width: 100%;  /* Full width */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+
+.wrapper {
+    width: 380px;
+    padding: 40px 30px 50px 30px;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper header {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.wrapper form {
+    margin: 40px 0;
+}
+
+form .field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+form .field.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        margin-left: 0px;
+    }
+    20%,
+    80% {
+        margin-left: -12px;
+    }
+    40%,
+    60% {
+        margin-left: 12px;
+    }
+}
+
+form .field .input-area {
+    height: 50px;
+    width: 100%;
+    position: relative;
+}
+
+form input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 45px;
+    font-size: 18px;
+    background: none;
+    caret-color: #5372F0;
+    border-radius: 5px;
+    border: 1px solid #bfbfbf;
+    border-bottom-width: 2px;
+    transition: all 0.2s ease;
+}
+
+form .field input:focus,
+form .field.valid input {
+    border-color: #5372F0;
+}
+
+form .field.shake input,
+form .field.error input {
+    border-color: #dc3545;
+}
+
+.field .input-area i {
+    position: absolute;
+    top: 50%;
+    font-size: 18px;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.input-area .icon {
+    left: 15px;
+    color: #bfbfbf;
+    transition: color 0.2s ease;
+}
+
+.input-area .error-icon {
+    right: 15px;
+    color: #dc3545;
+}
+
+form input:focus~.icon,
+form .field.valid .icon {
+    color: #5372F0;
+}
+
+form .field.shake input:focus~.icon,
+form .field.error input:focus~.icon {
+    color: #bfbfbf;
+}
+
+form input::placeholder {
+    color: #bfbfbf;
+    font-size: 17px;
+}
+
+form .field .error-txt {
+    color: #dc3545;
+    text-align: left;
+    margin-top: 5px;
+}
+
+form .field .error {
+    display: none;
+}
+
+form .field.shake .error,
+form .field.error .error {
+    display: block;
+}
+
+form .pass-txt {
+    text-align: left;
+    margin-top: -10px;
+}
+
+.wrapper a {
+    color: #5372F0;
+    text-decoration: none;
+}
+
+.wrapper a:hover {
+    text-decoration: underline;
+}
+
+form input[type="submit"] {
+    height: 50px;
+    margin-top: 30px;
+    color: #fff;
+    padding: 0;
+    border: none;
+    background: #5372F0;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background: #2c52ed;
+}
+
+/* Styles for medium-sized screens (below 768px) */
+@media (max-width: 768px) {
+    .navbar .logo img {
+        height: 40px;  /* Adjust logo size for smaller screens */
+    }
+
+    .nav-links {
+        gap: 15px;  /* Reduce gap between navbar links */
+    }
+
+    .container {
+        padding-bottom: 80px;  /* Adjust padding for smaller screens */
+    }
+    .title{
+        font-size: 25px;
+    }
+}
+
+/* Styles for small-sized screens (below 480px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: -30px ;  /* Adjust padding */
+    }
+    .wrapper {
+        width: 250px; /* Smaller wrapper */
+    }
+
+    .navbar .logo img {
+        height: 50px; /* Smaller logo */
+    }
+
+   
+
+    .container {
+        padding-bottom: 60px; /* Adjust padding for smaller screens */
+    }
+
+    form input {
+        padding: 0 20px; /* Reduce padding in inputs */
+    }
+
+    .footer {
+        padding: 10px; /* Adjust padding */
+    }
+
+}
+
+/* Styles for extra-small-sized screens (below 320px) */
+@media (max-width: 320px) {
+    .navbar {
+        padding: -30px ;  /* Adjust padding */
+    }
+    .navbar .logo img {
+        height: 30px;  /* Adjust logo size */
+    }
+    .wrapper {
+        width: 250px; /* Smaller wrapper */
+    }
+
+    .navbar .logo img {
+        height: 40px; /* Smaller logo */
+    }
+
+    form input {
+        font-size: 15px; /* Smaller font size */
+    }
+
+    .footer {
+        padding: 8px; /* Adjust padding for extra-small screens */
+    }
+
+    .nav-link {
+        font-size: 12px;  /* Smaller font size */
+    }
+
+    .container {
+        padding-bottom: 40px;  /* Adjust padding */
+    }
+    .title{
+        font-size: 18px;
+    }
+}

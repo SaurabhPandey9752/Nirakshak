@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="security.css">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="uttar-pradesh-police-logo-FAAA8755E6-seeklogo.com.png" alt="Logo" style="height: 40px;">
+        </div>
+        <div class="nav-links">
+            <!-- Home icon -->
+            <div class="nav-link">
+                <i class="fa-solid fa-house" style="font-size: 18px ; color: black; cursor: pointer;"></i>
+                <span style="color: black; margin-left: 5px; cursor: pointer;">Home</span>
+            </div>
+            <!-- User login icon -->
+            <div class="nav-link">
+                <i class="fa-regular fa-user" style="font-size: 18px; color: black; cursor: pointer;"></i>
+                <span style="color: black; margin-left: 5px; cursor: pointer;">User Login</span>
+            </div>
+            <!-- Police login icon -->
+            <div class="nav-link">
+                <i class="fa-solid fa-users-viewfinder" style="font-size: 18px; color: black; cursor: pointer;"></i>
+                <span style="color: black; margin-left: 5px; cursor: pointer;">Police Login</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search bar section -->
+    <div class="search-container">
+        <div class="search-bar" style="display: flex; justify-content: flex-start;">
+            <input type="text" placeholder="Search..." />
+            <button>Advanced Search</button>
+        </div>
+    </div>
+    <div class="whole">
+    <div class="records">
+        <h3>Records</h3>
+        <button>Map</button>
+    </div>
+
+    <!-- Search Camera Section -->
+    <div class="camera-search">
+        <h3>Search Camera</h3>
+        <!-- Dropdown for city, area location, and postal code -->
+        <div style="display: flex; justify-content: space-between;">
+            <div style="width: 30%;">
+                <label for="city">City</label>
+                <select id="city" name="city">
+                    <option value="">Select City</option>
+                    <option value="city1">City 1</option>
+                    <option value="city2">City 2</option>
+                    <option value="city3">City 3</option>
+                </select>
+            </div>
+
+            <div style="width: 30%;">
+                <label for="area">Area Location</label>
+                <select id="area" name="area">
+                    <option value="">Select Area</option>
+                    <option value="area1">Area 1</option>
+                    <option value="area2">Area 2</option>
+                    <option value="area3">Area 3</option>
+                </select>
+            </div>
+
+            <div style="width: 30%;">
+                <label for="postal-code">Postal Code</label>
+                <input type="text" id="postal-code" placeholder="Enter Postal Code">
+            </div>
+        </div>
+
+        <!-- Dropdown for camera type -->
+        <div style="margin-top: 10px;">
+            <label for="camera-type">Camera Type</label>
+            <select id="camera-type" name="camera-type">
+                <option value="">Select Camera Type</option>
+                <option value="type1">Type 1</option>
+                <option value="type2">Type 2</option>
+                option>
+            </select>
+        </div>
+
+        <h3>Search By latitude and longitude</h3>
+        <div style="margin-top: 20px;"> <!-- Adding some space between sections -->
+            <label for="latitude">Latitude:</label>
+            <input type="text" id="latitude" placeholder="Enter Latitude">
+            
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="longitude" placeholder="Enter Longitude">
+            <button style="font-size: 18px; margin-left: 80px; background-color: rgb(69, 191, 69); color: black; padding: 5px 20px; cursor: pointer; border: 0cap; border-radius: 5px;">Submit</button>
+        </div>
+    </div>
+    
+    <!-- Map Section -->
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14310.499234727677!2d81.5047665!3d26.2738377!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1713981400040!5m2!1sen!2sin" width="500" height="450" style="border:1px solid black; margin-left: 50px; box-shadow: 5px 10px rgb(115, 109, 109);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+        <!-- Camera Details Section -->
+        <div class="camera">
+            <h2>Camera Details</h2>
+            <hr> <!-- Add a line to separate sections -->
+            
+            <!-- Additional Camera Information -->
+            <div class="extra-camera-info">
+                <p>Owner Name: </p>
+                <br>
+                <p>Camera Location (long, lat): </p>
+                <p>long:</p>
+                <p>lat:</p>
+                <br>
+                <p>Camera IP and Password: </p>
+                <p>[IP Address]:</p>
+                <p>[Password]:</p>
+            </div>
+            
+            <!-- Sign Out Button -->
+            <div class="sign-out-section">
+                <button style="margin-top: 0px;">Sign Out</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
