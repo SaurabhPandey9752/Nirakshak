@@ -151,6 +151,9 @@ nav li:first-child {
   align-items: flex-start; /* Align to the left */
   justify-content: flex-start; /* Align to the top */
 }
+.sidebar.show {
+  right: 0; /* Sidebar is visible when 'show' class is added */
+}
 
 .sidebar li {
   width: 100%; /* Full width */
